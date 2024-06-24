@@ -1,0 +1,13 @@
+.book_item {
+  background-color: blanchedalmond;
+  display: flex;
+  gap: 5px;
+  margin: 3px 0 3px 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 17px 2px 17px;
+}
+
+.title_book {
+  font-weight: bold;
+}

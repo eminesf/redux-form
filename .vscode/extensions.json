@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "clinyong.vscode-css-modules",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "sonarsource.sonarlint-vscode",
+    "yoavbls.pretty-ts-errors",
+    "PKief.material-icon-theme",
+    "usernamehw.errorlens"
+  ]
+}

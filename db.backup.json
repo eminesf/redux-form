@@ -1,0 +1,54 @@
+{
+  "books": [
+    {
+      "id": "9dbab9d2-f9d2-45df-a6a3-98840404fd7d",
+      "title": "JavaScript: The Good Parts",
+      "author": "Douglas Crockford"
+    },
+    {
+      "id": "3387c6f6-a079-4f8b-bf16-4aa31e2ea4fd",
+      "title": "You Don't Know JS: Scope & Closures",
+      "author": "Kyle Simpson"
+    },
+    {
+      "id": "dd28a3be-aa5a-49ef-b731-b784c3c4f74a",
+      "title": "Eloquent JavaScript",
+      "author": "Marijn Haverbeke"
+    },
+    {
+      "id": "98ff7a32-7502-40ac-a811-4e95a8723331",
+      "title": "Learning React",
+      "author": "Alex Banks & Eve Porcello"
+    },
+    {
+      "id": "d5d6929c-8f9b-4772-ae0d-0584c525b37d",
+      "title": "React Up & Running",
+      "author": "Stoyan Stefanov"
+    },
+    {
+      "id": "c123c1ea-04da-443a-8bd1-10f096d94f2d",
+      "title": "Redux in Action",
+      "author": "Marc Garreau"
+    },
+    {
+      "id": "cec8f5ed-7ce9-4f41-8454-1bb81301df9d",
+      "title": "Pro React 16",
+      "author": "Adam Freeman"
+    },
+    {
+      "id": "8ae0c238-2629-497c-a727-ca3ebafc1a2d",
+      "title": "JavaScript: The Definitive Guide",
+      "author": "David Flanagan"
+    },
+    {
+      "id": "c0953052-4459-44a9-bd28-b69d0a229123",
+      "title": "React and React Native",
+      "author": "Adam Boduch"
+    },
+    {
+      "id": "3f0dada0-746d-481b-ab32-9028cac39382",
+      "title": "Mastering React Test-Driven Development",
+      "author": "Daniel Irvine"
+    }
+  ]
+}
