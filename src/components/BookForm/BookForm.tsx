@@ -7,6 +7,7 @@ import { v4 as uuid4 } from "uuid";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store";
 import { addBook, addBookOptimistic } from "../../redux/slices/booksSlice";
+import { useEffect } from "react";
 
 interface BookFormProps {
   bookId?: string;
@@ -65,31 +66,30 @@ const BookForm: React.FC<BookFormProps> = ({ bookId }) => {
       ...data,
     };
 
-    dispatch(addBookOptimistic(book));
-    dispatch(addBook);
+    dispatch(addBook(book));
+    await dispatch(addBookOptimistic(book));
+
     navigate("/");
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div>
         <div>
-          <div>
-            <label htmlFor="title">Book's title:</label>
-            <input type="text" {...register("title")} />
-            {errors.title && <span>{errors.title.message}</span>}
-          </div>
-
-          <div>
-            <label htmlFor="author">Author Name:</label>
-            <input type="text" {...register("author")} />
-            {errors.author && <span>{errors.author.message}</span>}
-          </div>
-
-          <button type="submit">Save</button>
+          <label htmlFor="title">Book's title:</label>
+          <input type="text" {...register("title")} />
+          {errors.title && <span>{errors.title.message}</span>}
         </div>
-      </form>
-    </>
+
+        <div>
+          <label htmlFor="author">Author Name:</label>
+          <input type="text" {...register("author")} />
+          {errors.author && <span>{errors.author.message}</span>}
+        </div>
+
+        <button type="submit">Save</button>
+      </div>
+    </form>
   );
 };
 
