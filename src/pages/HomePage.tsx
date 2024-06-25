@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { fetchBooks } from "../redux/slices/booksSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
@@ -9,7 +8,6 @@ import { Loading } from "../components/Loading/Loading";
 import { ErrorComponent } from "../components/ErrorComponent/ErrorComponent";
 import { useNavigate } from "react-router-dom";
 
-// style this page the way you want
 const HomePage: React.FC = () => {
   const dispatch = useAppDispatch();
   const { loading, error, books } = useAppSelector(booksSliceSelector);
