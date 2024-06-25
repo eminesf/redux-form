@@ -61,7 +61,6 @@ describe("BookList", () => {
       </Provider>
     );
 
-    // TODO: change getAllByRole to match the actual interface
     expect(getAllByRole("listitem").length).toBe(2);
   });
 
@@ -77,9 +76,12 @@ describe("BookList", () => {
     const deleteButton = await screen.findAllByTestId("delete-button");
     fireEvent.click(deleteButton[0]);
 
-    const state = store.getState() as RootState;
+    const confirmDeleteButton = await screen.findAllByTestId(
+      "confirm-delete-button"
+    );
+    fireEvent.click(confirmDeleteButton[0]);
 
-    console.log(state);
+    const state = store.getState() as RootState;
 
     expect(state.books.books).not.toContainEqual(books[0]);
 

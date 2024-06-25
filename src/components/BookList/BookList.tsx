@@ -67,7 +67,7 @@ const BookList: React.FC<BookListProps> = ({ books }) => {
                   </div>
                   <div>
                     <button
-                      data-testid="delete-button"
+                      data-testid="edit-button"
                       className={styles.button_delete}
                       onClick={() => handleUpdate(book.id)}
                     >
@@ -95,7 +95,12 @@ const BookList: React.FC<BookListProps> = ({ books }) => {
             <span className={styles.title_book}>"{title}"</span> book?{" "}
           </p>
         </div>
-        <button onClick={() => confirmDelete()}>Yes</button>
+        <button
+          data-testid="confirm-delete-button"
+          onClick={() => confirmDelete()}
+        >
+          Yes
+        </button>
         <button onClick={() => setOpenModal(false)}>No</button>
       </Modal>
 
