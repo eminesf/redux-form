@@ -47,8 +47,17 @@ export const addBookOptimistic = createAsyncThunk(
 // This function is intended to optimistically update a book in the store
 export const updateBookOptimistic = createAsyncThunk(
   "books/updateBookOptimistic",
-  async () => {
-    // TODO: Implement the logic for updating a book optimistically
+  async (data: Book) => {
+    try {
+      const response = await axios.put(
+        `http://localhost:3001/books/${data.id}`,
+        data
+      );
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      return console.log(error);
+    }
   }
 );
 
@@ -77,8 +86,13 @@ const booksSlice = createSlice({
     addBook: (state, action) => {
       state.books.push(action.payload);
     },
-    updateBook: () => {
-      // TODO: Implement the logic for updating a book
+    updateBook: (state, action) => {
+      state.books.map((book) => {
+        if (book.id == action.payload.id) {
+          book.title = action.payload.title;
+          book.author = action.payload.author;
+        }
+      });
     },
     deleteBook: (state, action: PayloadAction<string>) => {
       state.books = state.books.filter((book) => book.id !== action.payload);
