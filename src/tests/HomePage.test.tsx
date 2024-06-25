@@ -71,7 +71,6 @@ describe("HomePage", () => {
       </Provider>
     );
 
-    // TODO: change getByText to match the actual interface
     expect(getByText("Loading")).toBeInTheDocument();
   });
 
@@ -95,7 +94,6 @@ describe("HomePage", () => {
       </Provider>
     );
 
-    // TODO: change getByText to match the actual interface
     await waitFor(() => {
       expect(getByText(`Error!`)).toBeInTheDocument();
     });
