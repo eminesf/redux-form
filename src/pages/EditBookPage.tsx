@@ -15,7 +15,7 @@ const EditBookPage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Edit Book</h1>
+      <h1 className={styles.title}>Edit your Book</h1>
       <BookForm
         bookId={id}
         titleValue={filteredBook[0].title}

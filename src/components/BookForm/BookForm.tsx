@@ -13,6 +13,8 @@ import {
 } from "../../redux/slices/booksSlice";
 import { useState } from "react";
 
+import styles from "./BookForm.module.scss";
+
 interface BookFormProps {
   bookId?: string;
   titleValue?: string;
@@ -94,9 +96,9 @@ const BookForm: React.FC<BookFormProps> = ({
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <div>
+    <form className={styles.form_container} onSubmit={handleSubmit(onSubmit)}>
+      <div className={styles.container_input}>
+        <div className={styles.input_body}>
           <label data-testid="title-label" htmlFor="title">
             Title
           </label>
@@ -107,10 +109,12 @@ const BookForm: React.FC<BookFormProps> = ({
             {...register("title")}
             onChange={(ev) => setNewTitleValue(ev.target.value)}
           />
-          {errors.title && <span>{errors.title.message}</span>}
+          {errors.title && (
+            <span className={styles.error_message}>{errors.title.message}</span>
+          )}
         </div>
 
-        <div>
+        <div className={styles.input_body}>
           <label data-testid="author-label" htmlFor="author">
             Author
           </label>
@@ -121,11 +125,17 @@ const BookForm: React.FC<BookFormProps> = ({
             {...register("author")}
             onChange={(ev) => setNewAuthorValue(ev.target.value)}
           />
-          {errors.author && <span>{errors.author.message}</span>}
+          {errors.author && (
+            <span className={styles.error_message}>
+              {errors.author.message}
+            </span>
+          )}
         </div>
 
-        <button onClick={() => navigate("/")}>Back</button>
-        <button type="submit">Save</button>
+        <div className={styles.buttons_container}>
+          <button type="submit">Save</button>
+          <button onClick={() => navigate("/")}>Back</button>
+        </div>
       </div>
     </form>
   );

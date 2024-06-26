@@ -7,6 +7,7 @@ import BookList from "../components/BookList/BookList";
 import { Loading } from "../components/Loading/Loading";
 import { ErrorComponent } from "../components/ErrorComponent/ErrorComponent";
 import { useNavigate } from "react-router-dom";
+import { Button } from "../components/Button/Button";
 
 const HomePage: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -41,24 +42,21 @@ const HomePage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Search</h1>
-      <input
-        type="text"
-        placeholder="Search books..."
-        data-testid="search-input"
-        className=""
-        value={search}
-        onChange={(ev) => setSearch(ev.target.value)}
-      />
+      <div className={styles.form}>
+        <input
+          type="text"
+          placeholder="Search books..."
+          data-testid="search-input"
+          value={search}
+          onChange={(ev) => setSearch(ev.target.value)}
+        />
 
-      <div>
-        <h1>Books</h1>
         <BookList books={filteredBooks} />
       </div>
       <div>
-        <button data-testid="add-button" onClick={() => navigate("./add")}>
+        <Button testId="add-button" onClick={() => navigate("./add")}>
           Add new book
-        </button>
+        </Button>
       </div>
     </div>
   );

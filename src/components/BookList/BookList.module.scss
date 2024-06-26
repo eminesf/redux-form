@@ -1,13 +1,89 @@
+.content {
+  width: 100%;
+}
+
 .book_item {
-  background-color: blanchedalmond;
+  background-color: ivory;
   display: flex;
   gap: 5px;
   margin: 3px 0 3px 0;
   justify-content: space-between;
   align-items: center;
-  padding: 2px 17px 2px 17px;
+  padding: 6px 17px 6px 17px;
+  border-radius: 4px;
 }
 
-.title_book {
+.edit_delete_container {
+  display: flex;
+  gap: 4px;
+
+  button {
+    border: none;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.2s;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .button_delete {
+    background-color: rgb(255, 97, 65);
+  }
+}
+
+.title_book_modal {
   font-weight: bold;
+}
+
+.modal_button_container {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+
+  button {
+    padding: 12px 20px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+  }
+
+  button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.2s;
+  }
+
+  .modal_yes_button:hover {
+    background-color: rgb(255, 97, 65);
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  color: white;
+  align-items: center;
+
+  button {
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: none;
+    transition: 0.2s ease-in-out;
+    background-color: ivory;
+  }
+
+  button:hover {
+    transform: scale(1.08);
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: default;
+    transform: scale(1);
+  }
 }

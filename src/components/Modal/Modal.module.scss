@@ -14,7 +14,19 @@
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 150px;
-  background-color: #fff;
+  background-color: ivory;
   border-radius: 10px;
   color: black;
+
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .modal_body {
+    padding: 100px 10px;
+    width: 85%;
+  }
 }

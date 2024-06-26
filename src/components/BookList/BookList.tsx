@@ -53,8 +53,8 @@ const BookList: React.FC<BookListProps> = ({ books }) => {
   };
 
   return (
-    <div>
-      <main className="content">
+    <div className={styles.content}>
+      <div>
         <ul>
           {getItemsPage().map((book) => {
             return (
@@ -64,10 +64,10 @@ const BookList: React.FC<BookListProps> = ({ books }) => {
                     <p>Title: {book.title}</p>
                     <p>Author: {book.author}</p>
                   </div>
-                  <div>
+                  <div className={styles.edit_delete_container}>
                     <button
                       data-testid="edit-button"
-                      className={styles.button_delete}
+                      className={styles.button_edit}
                       onClick={() => handleUpdate(book.id)}
                     >
                       <Pencil />
@@ -85,25 +85,28 @@ const BookList: React.FC<BookListProps> = ({ books }) => {
             );
           })}
         </ul>
-      </main>
+      </div>
 
       <Modal isOpen={openModal}>
         <div>
           <p>
             Are you sure you want to delete the{" "}
-            <span className={styles.title_book}>"{title}"</span> book?{" "}
+            <span className={styles.title_book_modal}>"{title}"</span> book?{" "}
           </p>
         </div>
-        <button
-          data-testid="confirm-delete-button"
-          onClick={() => confirmDelete()}
-        >
-          Yes
-        </button>
-        <button onClick={() => setOpenModal(false)}>No</button>
+        <div className={styles.modal_button_container}>
+          <button
+            className={styles.modal_yes_button}
+            data-testid="confirm-delete-button"
+            onClick={() => confirmDelete()}
+          >
+            Yes
+          </button>
+          <button onClick={() => setOpenModal(false)}>No</button>
+        </div>
       </Modal>
 
-      <section>
+      <section className={styles.pagination}>
         <button
           type="button"
           onClick={handleBackPage}

@@ -1,0 +1,61 @@
+.form_container {
+  width: 400px;
+  display: flex;
+
+  input {
+    width: 100%;
+  }
+}
+
+.container_input {
+  flex-grow: 1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+
+  input {
+    max-width: 400px;
+  }
+}
+
+.input_body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.buttons_container {
+  display: flex;
+  gap: 10px;
+
+  button {
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: none;
+  }
+
+  :nth-child(2n + 1) {
+    background-color: #69b578;
+    color: ivory;
+  }
+
+  button:hover {
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    transform: scale(1.05);
+  }
+}
+
+.error_message {
+  color: rgb(255, 97, 65);
+  font-size: small;
+}
+
+@media (max-width: 768px) {
+  .form_container {
+    max-width: 300px;
+    min-width: none;
+  }
+}
