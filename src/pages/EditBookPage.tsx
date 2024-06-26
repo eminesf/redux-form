@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 import { useAppSelector } from "../redux/hooks";
 import { booksSliceSelector } from "../redux/slices/booksSlice.selectors";
 
-// style this page the way you want
 const EditBookPage: React.FC = () => {
   const { id } = useParams();
   const { books } = useAppSelector(booksSliceSelector);

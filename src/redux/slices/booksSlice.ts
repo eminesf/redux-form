@@ -44,7 +44,6 @@ export const addBookOptimistic = createAsyncThunk(
   }
 );
 
-// This function is intended to optimistically update a book in the store
 export const updateBookOptimistic = createAsyncThunk(
   "books/updateBookOptimistic",
   async (data: Book) => {
