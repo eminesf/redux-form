@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { v4 as uuid4 } from "uuid";
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../redux/store";
 import {
   addBook,
   addBookOptimistic,
@@ -14,6 +12,7 @@ import {
 import { useState } from "react";
 
 import styles from "./BookForm.module.scss";
+import { useAppDispatch } from "../../redux/hooks";
 
 interface BookFormProps {
   bookId?: string;
@@ -70,7 +69,7 @@ const BookForm: React.FC<BookFormProps> = ({
   });
 
   const navigate = useNavigate();
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
   const [newTitleValue, setNewTitleValue] = useState(titleValue);
   const [newAuthorValue, setNewAuthorValue] = useState(authorValue);
 

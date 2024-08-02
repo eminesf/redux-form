@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+
 import { Book } from "../../types/book";
 import {
   deleteBook,
@@ -7,10 +7,11 @@ import {
 } from "../../redux/slices/booksSlice";
 import { usePagination } from "../../hooks/usePagination";
 import { Pencil, Trash2 } from "lucide-react";
-import { AppDispatch } from "../../redux/store";
+
 import { Modal } from "../Modal/Modal";
 import styles from "./BookList.module.scss";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../redux/hooks";
 
 interface BookListProps {
   books: Book[];
@@ -19,7 +20,7 @@ interface BookListProps {
 const BookList: React.FC<BookListProps> = ({ books }) => {
   const [openModal, setOpenModal] = useState(false);
   const [bookToDelete, setBookToDelete] = useState({ id: "", title: "" });
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
   const {
     actualPage,
     getItemsPage,
